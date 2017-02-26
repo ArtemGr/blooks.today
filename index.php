@@ -35,7 +35,17 @@
     </style>
   </head>
   <body>
-    HW
+    <span id="signed-in-name"></span>
+    <button id="sign-in-github" type="button" style="display: none" onclick="sign_in_github()">Sign in with GitHub</button>
+    <button id="sign-in-anonymouly" type="button" style="display: none" onclick="sign_in_anonymously()">Sign in anonymously</button>
+    <button id="sign-out" type="button" style="display: none" onclick="sign_out()">Sign out</button>
+
+    <!-- Scripts. -->
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-auth.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="<?= $main_js_url ?>"></script>
   </body>
-  <script src="<?= $main_js_url ?>" async></script>
 </html>
