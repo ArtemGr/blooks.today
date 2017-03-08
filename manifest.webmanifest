@@ -1,0 +1,7 @@
+{ "short_name": "Smart reader",
+  "name": "Blooks Today, a smart reader",
+  "icons": [
+    {"src": "/img/rss_reader_256.png", "type": "image/png", "sizes": "256x256"},
+    {"src": "/img/rss_reader_64.png", "type": "image/png", "sizes": "64x64"},
+    {"src": "/img/rss_reader_32.png", "type": "image/png", "sizes": "32x32"}],
+  "start_url": "/"}

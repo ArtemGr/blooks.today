@@ -27,10 +27,9 @@
 ?><!DOCTYPE html>
 <html>
   <head>
-    <title>
-      Blooks Today
-    </title>
+    <title>Blooks Today, smart reader</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <style>
     </style>
   </head>
