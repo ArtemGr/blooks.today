@@ -44,15 +44,14 @@
 
     <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-auth.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.ravenjs.com/3.12.1/raven.min.js"></script>
     <script>
       Raven.config ('https://c556d463d627445a9c3f3733b4d1e2a3@sentry.io/146197') .install()
       if ('serviceWorker' in navigator) {
         window.addEventListener ('load', function() {
           navigator.serviceWorker.register ('<?= $sw_js_url ?>')
-            .then (function (reg) {reg.active.postMessage ({main_js_url: '<?= $main_js_url ?>'})})
+            .then (function (reg) {if (reg.active) reg.active.postMessage ({main_js_url: '<?= $main_js_url ?>'})})
             .catch (function (err) {Raven.captureException (err)})})}
     </script>
     <script src="<?= $main_js_url ?>"></script>
