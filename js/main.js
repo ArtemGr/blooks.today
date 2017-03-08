@@ -1,5 +1,3 @@
-Raven.config ('https://c556d463d627445a9c3f3733b4d1e2a3@sentry.io/146197') .install()
-
 function sign_in_anonymously() {
   firebase.auth().signInAnonymously().then (function (user) {
     firebase.auth().currentUser.getToken (/* forceRefresh */ false) .then (function (idToken) {
@@ -32,11 +30,3 @@ firebase.auth().onAuthStateChanged (function (user) {
     $('#sign-in-github') .show()
     $('#sign-in-anonymouly') .show()
     $('#sign-out') .hide()}});
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener ('load', function() {
-    navigator.serviceWorker.register ('/sw.js') .then (function (registration) {
-      //console.log ('ServiceWorker registration successful with scope: ', registration.scope)
-    }).catch (function (err) {
-      //console.log ('ServiceWorker registration failed: ', err)
-    })})}

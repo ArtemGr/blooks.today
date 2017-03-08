@@ -22,12 +22,13 @@
     return;}
 
   $main_js_url = '/js/main.js?lm=' . stat ('js/main.js') [9];
+  $sw_js_url = '/sw.js?lm=' . stat ('sw.js') [9];
 
   header ('Content-Type: text/html; charset=UTF-8');
 ?><!DOCTYPE html>
 <html>
   <head>
-    <title>Blooks Today, smart reader</title>
+    <title>Blooks Today, a smart reader</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <style>
@@ -46,6 +47,17 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdn.ravenjs.com/3.12.1/raven.min.js"></script>
+    <script>
+      Raven.config ('https://c556d463d627445a9c3f3733b4d1e2a3@sentry.io/146197') .install()
+      if ('serviceWorker' in navigator) {
+        window.addEventListener ('load', function() {
+          navigator.serviceWorker.register ('<?= $sw_js_url ?>')
+            .then (function (reg) {reg.active.postMessage ({main_js_url: '<?= $main_js_url ?>'})})
+            .catch (function (err) {Raven.captureException (err)})})}
+    </script>
     <script src="<?= $main_js_url ?>"></script>
+
+    <br/>
+    Here's something!
   </body>
 </html>
