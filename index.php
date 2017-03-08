@@ -45,6 +45,7 @@
     <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-auth.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.ravenjs.com/3.12.1/raven.min.js"></script>
     <script src="<?= $main_js_url ?>"></script>
   </body>
 </html>
