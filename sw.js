@@ -15,6 +15,7 @@ self.addEventListener ('fetch', function (event) {
   var url = event.request.url.toString()
   var skip_cache = false
   if (url.includes ('//www.googleapis.com/')) skip_cache = true  // We don't want to mess with the auth.
+  else if (url.includes ('//securetoken.googleapis.com/')) skip_cache = true
 
   if (skip_cache) event.respondWith (fetch (event.request))
   else event.respondWith (

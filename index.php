@@ -38,7 +38,11 @@
     <span id="signed-in-name"></span>
     <button id="sign-in-github" type="button" style="display: none" onclick="sign_in_github()">Sign in with GitHub</button>
     <button id="sign-in-anonymouly" type="button" style="display: none" onclick="sign_in_anonymously()">Sign in anonymously</button>
-    <button id="sign-out" type="button" style="display: none" onclick="sign_out()">Sign out</button>
+    <div id="sign-out" style="display: none">
+      We'd like you to stay, but you can
+      <button type="button" onclick="sign_out()">sign out</button>,
+      if you must.
+    </div>
 
     <!-- Scripts. -->
 
@@ -57,6 +61,13 @@
     <script src="<?= $main_js_url ?>"></script>
 
     <br/>
-    Here's something!
+
+    <div id="rss-prompt" style="display: none">
+      Please enter the URL of a site you'd like to read and filter:
+      <input id="rss-prompt-url" type="text" style="width: 90%" /><br/>
+      <div id="rss-preview">
+        We'll promptly check whether we can grok it.
+      </div>
+    </div>
   </body>
 </html>
