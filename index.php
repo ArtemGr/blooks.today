@@ -55,7 +55,7 @@
       if ('serviceWorker' in navigator) {
         window.addEventListener ('load', function() {
           navigator.serviceWorker.register ('<?= $sw_js_url ?>')
-            .then (function (reg) {if (reg.active) reg.active.postMessage ({main_js_url: '<?= $main_js_url ?>'})})
+            .then (function (reg) {window.the_service_worker_registration = reg})
             .catch (function (err) {Raven.captureException (err)})})}
     </script>
     <script src="<?= $main_js_url ?>"></script>
